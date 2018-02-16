@@ -22,8 +22,8 @@
 			//Bio displays info about the person in a sentence.
 			//Right pronoun usage - he or she.
 			this.bio = function() {
-				if (gender === 'male' || gender === 'Male' || gender === 'M' || gender === 'm') {alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He is a ' + this.occupation + '. ' + 'He likes ' + allInterests);
-				} else if (gender === 'female'  || gender === 'Female' || gender === 'F' || gender === 'f') {alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. She is a ' + this.occupation + '. ' + 'She likes ' + allInterests);
+				if (gender === 'male' || gender === 'Male' || gender === 'M' || gender === 'm') {alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He is a ' + this.occupation + '. ' + 'He likes ' + allInterests + '.');
+				} else if (gender === 'female'  || gender === 'Female' || gender === 'F' || gender === 'f') {alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. She is a ' + this.occupation + '. ' + 'She likes ' + allInterests + '.');
 				}	
 			};
 			this.greeting = function() {
@@ -33,17 +33,20 @@
 			// A comma between each interest except for the last two
 			var allInterests = '';
 				for (var i = 0; i < interests.length;  i++) {
-					if (i === interests.length - 1) {
-						allInterests += 'and ' + interests[i] + '.';}
+					if (interests.length == 1) {
+						allInterests += interests[i];}
+					else if (i === interests.length - 1) {
+						allInterests += 'and ' + interests[i];}
 					else if (i === interests.length - 2) {
 						allInterests += interests[i] + ' ';}
-					else {allInterests += interests[i] + ', ';}
+					else {
+						allInterests += interests[i] + ', ';}
 				 }
 			return allInterests;
 		}
 		
 		var person1 = new Person('Bob', 'Smith', 32, 'Male', ['music', 'skiing', 'running', 'talking', 'sleeping'], 'farmer');
-		var person2 = new Person('Lucy', 'Banks', 27, 'female', ['cooking', 'art'], 'dancer');
+		var person2 = new Person('Lucy', 'Banks', 27, 'female', ['cooking', 'baking'], 'dancer');
       
     </script>
 </html>
