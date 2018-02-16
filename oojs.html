@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+
+  </body>
+
+    <script>
+		function Person(first, last, age, gender, interests, occupation) {
+			this.name = {
+				'first': first,
+				'last' : last
+			};
+			this.age = age;
+			this.gender = gender;
+			this.interests = interests;
+			this.occupation = occupation;
+			this.bio = function() {
+				if (gender === 'male') {alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He is a ' + this.occupation + '. ' + 'He likes ' + allInterests);
+				} else {alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. She is a ' + this.occupation + '. ' + 'She likes ' + allInterests);
+				}	
+			};
+			this.greeting = function() {
+				alert('Hi! I\'m ' + this.name.first + '.');
+			};
+			var allInterests = '';
+				for (var i = 0; i < interests.length;  i++) {
+					if (i === interests.length - 1) {
+						allInterests += 'and ' + interests[i] + '.';}
+					else if (i === interests.length - 2) {
+						allInterests += interests[i] + ' ';}
+					else {allInterests += interests[i] + ', ';}
+				 }
+			return allInterests;
+		}
+		
+		var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing', 'running', 'talking', 'sleeping'], 'farmer');
+		var person2 = new Person('Lucy', 'Banks', 27, 'female', ['cooking', 'art'], 'dancer');
+      
+    </script>
+</html>
